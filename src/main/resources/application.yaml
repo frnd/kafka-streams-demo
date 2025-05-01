@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: kafka-streams-demo
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:localhost:9092}
+    streams:
+      application-id: kafka-streams-demo
+      properties:
+        auto.offset.reset: earliest
+        processing.guarantee: exactly_once_v2
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
